@@ -19,6 +19,29 @@
         <div class="c3" id="rightDrawer">
         </div>
     </div>
+
+    <script type="text/javascript">
+        var position = 0;
+        var mainPanel = document.getElementById("mainPanel");
+        var leftDrawer = document.getElementById("leftDrawer");
+        var rightDrawer = document.getElementById("rightDrawer");
+        function toggle(evt) {
+            position++;
+            if (position % 3 == 0) {
+                leftDrawer.classList.remove("open");
+                rightDrawer.classList.remove("open");
+            } else if (position % 3 == 1) {
+                leftDrawer.classList.add("open");
+                rightDrawer.classList.remove("open");
+            } else {
+                leftDrawer.classList.remove("open");
+                rightDrawer.classList.add("open");
+            }
+        }
+        mainPanel.addEventListener("click", toggle);
+        leftDrawer.addEventListener("click", toggle);
+        rightDrawer.addEventListener("click", toggle);
+    </script>
 </body>
 </body>
 </html>
